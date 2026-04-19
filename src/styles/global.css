@@ -1,0 +1,214 @@
+/* ============================================================
+   GLOBAL STYLES — Markswell Ogutu Portfolio
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #0a0c0f;
+  --bg2:         #111418;
+  --bg3:         #181c22;
+  --card:        #13171d;
+  --border:      #1e2530;
+  --border2:     #2a3340;
+
+  --green:       #00e676;
+  --green2:      #00c853;
+  --green-dim:   rgba(0, 230, 118, 0.08);
+  --green-dim2:  rgba(0, 230, 118, 0.15);
+
+  --text:        #e8edf3;
+  --text2:       #8c9bab;
+  --text3:       #5a6a7a;
+
+  --amber:       #ffab40;
+  --blue:        #40c4ff;
+  --red:         #ff5252;
+
+  --mono:        'JetBrains Mono', monospace;
+  --sans:        'Syne', sans-serif;
+
+  --radius:      8px;
+  --radius2:     12px;
+
+  --max-width:   1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Utility ── */
+.section-wrapper {
+  padding: 5rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-label::before {
+  content: '//';
+  color: var(--text3);
+}
+
+.section-title {
+  font-family: var(--sans);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  margin-bottom: 2.5rem;
+  line-height: 1.15;
+}
+
+.section-title .accent {
+  color: var(--green);
+}
+
+/* ── Tags ── */
+.tag {
+  font-size: 0.68rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-family: var(--mono);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  cursor: default;
+}
+
+.tag:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-dim);
+}
+
+.tag--green {
+  background: var(--green-dim2);
+  border-color: rgba(0, 230, 118, 0.3);
+  color: var(--green);
+}
+
+.tag--amber {
+  background: rgba(255, 171, 64, 0.1);
+  border-color: rgba(255, 171, 64, 0.3);
+  color: var(--amber);
+}
+
+.tag--blue {
+  background: rgba(64, 196, 255, 0.1);
+  border-color: rgba(64, 196, 255, 0.3);
+  color: var(--blue);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+  border: none;
+}
+
+.btn--primary {
+  background: var(--green);
+  color: #0a0c0f;
+}
+
+.btn--primary:hover {
+  background: var(--green2);
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.btn--outline:hover {
+  background: var(--green-dim);
+  transform: translateY(-1px);
+}
+
+/* ── Fade-in animation ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text3);
+}
+
+/* ── Responsive base ── */
+@media (max-width: 680px) {
+  .section-wrapper {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+}

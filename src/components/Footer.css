@@ -1,0 +1,21 @@
+.footer {
+  padding: 1.75rem 2rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text3);
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
+}
+
+.footer__heart {
+  color: var(--red);
+}
+
+.footer__name {
+  color: var(--text2);
+}
+
+.footer__accent {
+  color: var(--green);
+}

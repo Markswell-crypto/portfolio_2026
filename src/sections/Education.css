@@ -1,0 +1,135 @@
+.edu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Education list */
+.edu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.edu-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.edu-item:hover {
+  border-color: var(--border2);
+  transform: translateX(3px);
+}
+
+.edu-item__year {
+  font-size: 0.68rem;
+  color: var(--green);
+  min-width: 70px;
+  padding-top: 3px;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.edu-item__name {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.edu-item__degree {
+  font-size: 0.75rem;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* Certifications */
+.cert__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.cert-card:hover {
+  border-color: var(--green);
+  transform: translateX(3px);
+}
+
+.cert-card__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  background: var(--green-dim2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.cert-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-card__name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cert-card__issuer {
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-top: 0.15rem;
+}
+
+.cert-card__check {
+  color: var(--green);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cert-card:hover .cert-card__check {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .edu__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .edu-item {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .edu-item__year {
+    min-width: unset;
+  }
+}
