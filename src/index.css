@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+
+    --background: 210 20% 2%;
+    --foreground: 214 32% 91%;
+    --card: 215 28% 8%;
+    --card-foreground: 214 32% 91%;
+    --popover: 215 28% 8%;
+    --popover-foreground: 214 32% 91%;
+    --primary: 157 100% 50%;
+    --primary-foreground: 210 20% 2%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 214 32% 91%;
+    --muted: 215 28% 12%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 157 100% 50%;
+    --accent-foreground: 210 20% 2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 157 100% 50%;
+    --chart-1: 157 100% 50%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 215 28% 5%;
+    --sidebar-foreground: 214 32% 91%;
+    --sidebar-primary: 157 100% 50%;
+    --sidebar-primary-foreground: 210 20% 2%;
+    --sidebar-accent: 215 28% 12%;
+    --sidebar-accent-foreground: 214 32% 91%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 157 100% 50%;
+  }
+
+  .dark {
+    --background: 210 20% 2%;
+    --foreground: 214 32% 91%;
+    --card: 215 28% 8%;
+    --card-foreground: 214 32% 91%;
+    --popover: 215 28% 8%;
+    --popover-foreground: 214 32% 91%;
+    --primary: 157 100% 50%;
+    --primary-foreground: 210 20% 2%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 214 32% 91%;
+    --muted: 215 28% 12%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 157 100% 50%;
+    --accent-foreground: 210 20% 2%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 157 100% 50%;
+    --chart-1: 157 100% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 215 28% 5%;
+    --sidebar-foreground: 214 32% 91%;
+    --sidebar-primary: 157 100% 50%;
+    --sidebar-primary-foreground: 210 20% 2%;
+    --sidebar-accent: 215 28% 12%;
+    --sidebar-accent-foreground: 214 32% 91%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 157 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Circuit Grid Background */
+.circuit-grid {
+  background-image:
+    linear-gradient(rgba(30, 41, 59, 0.3) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, rgba(30, 41, 59, 0.3) 0.5px, transparent 0.5px);
+  background-size: 60px 60px;
+}
+
+/* Scanline effect */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline-effect {
+  animation: scanline 8s linear infinite;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Glitch hover effect */
+@keyframes glitch {
+  0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
+  20% { clip-path: inset(92% 0 1% 0); transform: translate(1px, -1px); }
+  40% { clip-path: inset(43% 0 1% 0); transform: translate(-1px, 2px); }
+  60% { clip-path: inset(25% 0 58% 0); transform: translate(2px, 1px); }
+  80% { clip-path: inset(54% 0 7% 0); transform: translate(-1px, -1px); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210 20% 2%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(215 28% 17%);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(157 100% 50% / 0.5);
+}
+
+/* Selection */
+::selection {
+  background: hsl(157 100% 50% / 0.2);
+  color: hsl(157 100% 50%);
+}
