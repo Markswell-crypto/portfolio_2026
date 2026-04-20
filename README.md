@@ -1,68 +1,73 @@
 # Markswell Ogutu — QA Automation Engineer Portfolio
 
-A production-ready personal portfolio website built with React. Dark terminal aesthetic with electric green accents, showcasing QA automation skills, experience, and projects.
+Professional personal portfolio website for Markswell Osoro Ogutu, built with React and modern CSS. This site showcases QA automation expertise, experience, project highlights, and contact details.
 
-## Tech Stack
+## Overview
 
-- **React 18** — Component-based UI
-- **CSS Modules** — Scoped, component-level styles
-- **Google Fonts** — JetBrains Mono + Syne
-- **No external UI libraries** — Pure CSS animations and transitions
+This portfolio presents a clean, responsive landing page designed to highlight:
+
+- QA automation skills and toolset
+- Performance and CI/CD result metrics
+- Work experience and verified references
+- Projects using Selenium, Postman, JMeter, and Jenkins
+- A polished contact section with easy navigation
+
+The portfolio includes a light/dark theme toggle, mobile-friendly navigation, and smooth scroll interactions.
+
+## Built With
+
+- **React** — UI rendering and component structure
+- **CSS** — responsive layout, grid system, and animation styles
+- **Vite** — fast development server and optimized production build
+- **LocalStorage** — theme preference persistence
 
 ## Project Structure
 
-```
-markswell-portfolio/
+```text
+portfolio_2026/
 ├── public/
 │   └── index.html
 ├── src/
-│   ├── components/
-│   │   ├── Navbar.js       # Sticky nav with active section tracking
-│   │   ├── Navbar.css
-│   │   ├── Footer.js
-│   │   └── Footer.css
-│   ├── sections/
-│   │   ├── Hero.js         # Animated terminal + hero content
-│   │   ├── Hero.css
-│   │   ├── Skills.js       # Skills grid with tag variants
-│   │   ├── Skills.css
-│   │   ├── Experience.js   # Expandable timeline cards
-│   │   ├── Experience.css
-│   │   ├── Projects.js     # Project cards with metrics
-│   │   ├── Projects.css
-│   │   ├── Education.js    # Education + certifications side-by-side
-│   │   ├── Education.css
-│   │   ├── Contact.js      # Contact links, quick facts, references
-│   │   └── Contact.css
-│   ├── styles/
-│   │   └── global.css      # CSS variables, base styles, utilities
-│   ├── data.js             # All portfolio content (single source of truth)
-│   ├── App.js              # Root component + scroll animation observer
-│   └── index.js            # React entry point
-└── package.json
+│   ├── App.jsx         # Main portfolio view and sections
+│   ├── index.css       # Global styling and theme rules
+│   ├── main.jsx        # React entry point
+│   └── assets/         # Supporting images and assets
+├── package.json
+└── README.md
 ```
+
+## Features
+
+- Responsive hero section with action CTA
+- Light/dark theme toggle with saved preferences
+- Navigation for About, Results, Tech, Features, Skills, Experience, Projects, Education, References, and Contact
+- Results section highlighting measurable QA outcomes
+- Technology stack section reflecting project tooling
+- Testimonials and reference endorsements
+- Smooth scrolling and fade-in section animations
+- Mobile-friendly hamburger navigation
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js >= 14
-- npm >= 6
+- Node.js (recommended 16+)
+- npm
 
-### Installation
+### Install
 
 ```bash
-# Clone or extract the project
-cd markswell-portfolio
-
-# Install dependencies
+cd portfolio_2026
 npm install
-
-# Start development server
-npm start
 ```
 
-The app will open at [http://localhost:3000](http://localhost:3000).
+### Run Locally
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal to view the portfolio.
 
 ### Build for Production
 
@@ -70,57 +75,67 @@ The app will open at [http://localhost:3000](http://localhost:3000).
 npm run build
 ```
 
-Outputs a production-optimised build to the `build/` folder. Ready to deploy to:
-- **Netlify** — drag & drop the `build/` folder
-- **Vercel** — `vercel --prod`
-- **GitHub Pages** — add `"homepage"` to package.json and run `npm run deploy`
+The optimized build output is placed into the `dist/` folder.
 
-## Customisation
+## Customization
 
-All portfolio content lives in **`src/data.js`**. Edit that single file to update:
+The main content is currently defined in `src/App.jsx`. To update portfolio details, edit the relevant sections in the file:
 
-- Personal info (name, email, phone, LinkedIn, GitHub)
-- Skills and tags
-- Work experience and bullet points
-- Projects and metrics
-- Education history
-- Certifications
-- References
+- Hero copy and contact details
+- Results and metrics
+- Tech stack entries
+- Features list
+- Skills, experience, projects, and education
+- References and testimonials
 
-No other files need to be touched for content changes.
+The styling is in `src/index.css`, where you can refine layout, colors, and responsive behavior.
 
-## Features
+## Notes
 
-- Animated terminal window in Hero with typewriter effect
-- Sticky navbar with active section highlighting
-- Mobile-responsive hamburger menu
-- Expandable experience cards (click to expand bullets)
-- Scroll-triggered fade-in animations (IntersectionObserver)
-- Copy-to-clipboard for email address
-- Pulsing availability badge
-- Smooth scroll navigation
-- Custom scrollbar styling
-- Hover micro-interactions throughout
+- The portfolio uses lightweight React and CSS only — no external UI frameworks are required.
+- Theme preference is saved using `localStorage`.
+- The current project setup is already configured to run with Vite.
 
-## Deployment to GitHub Pages
+## Deployment
 
-1. Add to `package.json`:
-   ```json
-   "homepage": "https://YOUR_USERNAME.github.io/markswell-portfolio"
-   ```
+This app can be deployed to any static hosting service that supports Vite output. Common options include:
 
-2. Install gh-pages:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
+- **Vercel** — connect the GitHub repository and deploy the `dist/` folder
+- **Netlify** — drag and drop the `dist/` folder or connect the repo for automatic deploys
+- **GitHub Pages** — add `"homepage"` to `package.json` and use `gh-pages`
 
-3. Add to `package.json` scripts:
-   ```json
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build"
-   ```
+Example GitHub Pages setup:
 
-4. Deploy:
-   ```bash
-   npm run deploy
-   ```
+```json
+"homepage": "https://your-username.github.io/portfolio_2026"
+```
+
+```bash
+npm install --save-dev gh-pages
+```
+
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+```
+
+```bash
+npm run deploy
+```
+
+## Contributing
+
+Feel free to customize this portfolio for your own use. Recommended edits:
+
+- Update hero messaging and contact details in `src/App.jsx`
+- Add or refine projects, experience, and skills content
+- Adjust color palette and layout in `src/index.css`
+- Keep styling consistent with the QA automation brand and professional tone
+
+Contributions and improvements are welcome for creating a stronger personal showcase.
+
+## License
+
+This repository is free to use and customize for personal portfolio purposes.

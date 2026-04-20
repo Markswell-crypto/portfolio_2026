@@ -13,12 +13,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: border-color 0.3s, background 0.3s;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+[data-theme="light"] .navbar {
+  background: rgba(248, 250, 252, 0.8);
 }
 
 .navbar--scrolled {
   background: rgba(10, 12, 15, 0.95);
   border-bottom-color: var(--border);
+}
+
+[data-theme="light"] .navbar--scrolled {
+  background: rgba(248, 250, 252, 0.95);
 }
 
 /* Brand */
@@ -96,6 +104,31 @@
   background: var(--green);
 }
 
+/* Theme toggle */
+.navbar__theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--text2);
+  font-size: 1.1rem;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.navbar__theme-toggle:hover {
+  background: var(--green-dim);
+  color: var(--green);
+  transform: scale(1.05);
+}
+
+.navbar__theme-toggle:active {
+  transform: scale(0.95) rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
 /* Mobile drawer */
 .navbar__drawer {
   position: fixed;
@@ -109,7 +142,7 @@
   padding: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  transition: max-height 0.35s ease, padding 0.35s ease, background-color 0.3s ease;
 }
 
 .navbar__drawer--open {

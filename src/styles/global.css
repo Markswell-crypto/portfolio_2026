@@ -11,6 +11,7 @@
 }
 
 :root {
+  /* Dark Theme (Default) */
   --bg:          #0a0c0f;
   --bg2:         #111418;
   --bg3:         #181c22;
@@ -31,8 +32,8 @@
   --blue:        #40c4ff;
   --red:         #ff5252;
 
-  --mono:        'JetBrains Mono', monospace;
-  --sans:        'Syne', sans-serif;
+  --mono:        'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  --sans:        'Syne', 'Inter', 'SF Pro Display', 'Segoe UI', 'Roboto', sans-serif;
 
   --radius:      8px;
   --radius2:     12px;
@@ -40,8 +41,32 @@
   --max-width:   1100px;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+  --bg:          #f8fafc;
+  --bg2:         #ffffff;
+  --bg3:         #f1f5f9;
+  --card:        #ffffff;
+  --border:      #e2e8f0;
+  --border2:     #cbd5e1;
+
+  --green:       #059669;
+  --green2:      #047857;
+  --green-dim:   rgba(5, 150, 105, 0.08);
+  --green-dim2:  rgba(5, 150, 105, 0.15);
+
+  --text:        #0f172a;
+  --text2:       #475569;
+  --text3:       #64748b;
+
+  --amber:       #d97706;
+  --blue:        #2563eb;
+  --red:         #dc2626;
+}
+
 html {
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -52,6 +77,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -106,7 +132,7 @@ a {
   border: 1px solid var(--border2);
   color: var(--text2);
   font-family: var(--mono);
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
   cursor: default;
 }
 
@@ -159,6 +185,13 @@ a {
 .btn--primary:hover {
   background: var(--green2);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 230, 118, 0.3);
+}
+
+.btn--outline:hover {
+  background: var(--green-dim);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 230, 118, 0.2);
 }
 
 .btn--outline {
@@ -176,12 +209,61 @@ a {
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ── Slide-in from left ── */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Scale-in animation ── */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Bounce-in animation ── */
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ── Scrollbar ── */
@@ -191,11 +273,13 @@ a {
 
 ::-webkit-scrollbar-track {
   background: var(--bg);
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--border2);
   border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {

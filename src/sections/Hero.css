@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  animation-delay: 0.2s;
 }
 
 .hero__dollar {
@@ -52,6 +53,7 @@
   letter-spacing: -0.04em;
   color: var(--text);
   margin-bottom: 0.6rem;
+  animation-delay: 0.4s;
 }
 
 .hero__name-accent {
@@ -63,6 +65,7 @@
   color: var(--text2);
   margin-bottom: 1.75rem;
   letter-spacing: 0.02em;
+  animation-delay: 0.6s;
 }
 
 .hero__pipe {
@@ -78,12 +81,14 @@
   margin-bottom: 2.25rem;
   border-left: 2px solid var(--green);
   padding-left: 1.25rem;
+  animation-delay: 0.8s;
 }
 
 .hero__cta {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  animation-delay: 1s;
 }
 
 /* ── Stats ── */
@@ -94,6 +99,7 @@
   padding-top: 2.5rem;
   border-top: 1px solid var(--border);
   flex-wrap: wrap;
+  animation-delay: 1.2s;
 }
 
 .hero__stat {
@@ -129,6 +135,18 @@
   overflow: hidden;
   display: none;
   align-self: center;
+  animation: slideInFromRight 1s ease-out 1.5s both;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .term-bar {

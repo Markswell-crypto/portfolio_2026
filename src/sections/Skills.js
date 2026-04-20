@@ -11,8 +11,12 @@ export default function Skills() {
           Technical <span className="accent">Arsenal</span>
         </h2>
         <div className="skills__grid">
-          {skills.map((card) => (
-            <div key={card.title} className="skill-card">
+          {skills.map((card, index) => (
+            <div
+              key={card.title}
+              className="skill-card scale-in"
+              style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
+            >
               <div className="skill-card__header">
                 <div className="skill-card__icon" aria-hidden="true">
                   {card.icon}

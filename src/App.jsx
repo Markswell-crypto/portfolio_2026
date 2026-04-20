@@ -4,6 +4,8 @@ import './index.css';
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Results', href: '#results' },
+  { label: 'Tech', href: '#tech' },
+  { label: 'Features', href: '#features' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
@@ -120,6 +122,10 @@ function App() {
             I enjoy collaborating with developers, QA, and DevOps teams to create stable test
             environments, validate performance, and support continuous delivery for web and API platforms.
           </p>
+          <p>
+            This portfolio itself is built with React, modern CSS, responsive layout, and polished scroll
+            animations to reflect the same quality standards I bring to automation projects.
+          </p>
         </section>
 
         <section className="section-block results-section" id="results">
@@ -139,6 +145,52 @@ function App() {
             <article>
               <p className="metric-value">30+</p>
               <p className="metric-label">Daily automated checks executed across cross-team test layers.</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="section-block tech-section" id="tech">
+          <div className="section-heading">
+            <span>Tech Stack</span>
+            <h2>Tools and frameworks powering my automation work.</h2>
+          </div>
+          <div className="tech-grid">
+            <article>
+              <h3>React & UI</h3>
+              <p>React.js front-end with smooth animations and responsive states.</p>
+            </article>
+            <article>
+              <h3>Testing Tools</h3>
+              <p>Selenium, Pytest, Postman, TestRail, JMeter, and TestNG for end-to-end quality.</p>
+            </article>
+            <article>
+              <h3>Cloud & DevOps</h3>
+              <p>Docker, Kubernetes, Jenkins, AWS, and Azure for reliable CI/CD validation.</p>
+            </article>
+            <article>
+              <h3>Modern CSS</h3>
+              <p>Pure CSS layout and transitions with no external UI library dependencies.</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="section-block features-section" id="features">
+          <div className="section-heading">
+            <span>Features</span>
+            <h2>Portfolio behaviors inspired by your GitHub README.</h2>
+          </div>
+          <div className="feature-list">
+            <article>
+              <h3>Animated experience</h3>
+              <p>Fade-in sections and smooth scroll navigation for a professional browsing experience.</p>
+            </article>
+            <article>
+              <h3>Responsive design</h3>
+              <p>Hamburger menu and layout adjustments for mobile and tablet screens.</p>
+            </article>
+            <article>
+              <h3>Clean interaction</h3>
+              <p>Button hover effects, clear contact CTA, and polished content hierarchy.</p>
             </article>
           </div>
         </section>
